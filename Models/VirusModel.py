@@ -1,4 +1,3 @@
-#!/bin/python env
 
 class VirusModel:
     def __init__(self, name, type, signature):
