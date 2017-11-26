@@ -1,0 +1,9 @@
+This document will contian a list over the vulnerablities(vuln) and possible exploits(expl) for each vuln.
+
+NETWORK PORTS - SERVICES
+
+Port 23: Telnet
+	Known for being online in many IOT devices today
+
+Port 445: SMB
+	Eternal Blue exploitet this vuln... Remeber this has to be on the same network
