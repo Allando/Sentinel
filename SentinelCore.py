@@ -2,6 +2,9 @@
 This is the Convolutional Neural Network module of Sentinel
 
 Concept: 3
+
+Input: Open ports
+Output: Exploitable 1/0
 """
 
 import numpy as np
