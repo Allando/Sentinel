@@ -8,6 +8,7 @@ Output: Exploitable 1/0
 """
 
 import numpy as np
+import sys
 
 class Sentinel_Core:
 
@@ -22,4 +23,7 @@ class Sentinel_Core:
         return 1/(1+np.exp(-np.sum(w, a, -b)))
 
     def cost(self, w, b):
+        pass
+
+    def os_type(input):
         
