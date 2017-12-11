@@ -8,22 +8,46 @@ Output: Exploitable 1/0
 """
 
 import numpy as np
-import sys
+import platform
+import os
 
-class Sentinel_Core:
 
-    def __init__(self, sizes):
-        self.sizes = sizes
-        self.num_layers = len(sizes)
-        self.weights = [np.random.randn(y, 1) for y in sizes[1:]]
-        sefl.biases = [np.random.randn(y, x)
-                for x, y in zip(sizes[:-1], sizes[1:])]
+def main():
+    weights = np.random.randn()
+    biases = np.random.randn()
+    
 
-    def sigmoid(self, a, w, b):
-        return 1/(1+np.exp(-np.sum(w, a, -b)))
+def input():
+    
 
-    def cost(self, w, b):
-        pass
 
-    def os_type(input):
-        
+def h1_arch():
+    return platform.machine()
+
+
+def h2_os():
+    return os.name
+
+
+def output_win():
+    pass
+
+
+def output_fail():
+    pass
+
+
+# TODO: Ranomize datasets
+    
+
+# TODO: Cost funtion
+
+# TODO: Gradient Decsent
+
+
+# Activation funcitons
+def sigmoid(self, z):
+    return 1.0 / (1.0+np.exp(-z))
+
+
+main()
