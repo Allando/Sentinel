@@ -1,53 +1,51 @@
 """
 This is the Convolutional Neural Network module of Sentinel
 
-Concept: 3
+Concept: #5
 
-Input: Open ports
-Output: Exploitable 1/0
+Input: Open ports or Software or Kernel... which basically is software but whatever.
+Output: Exploitable || Inexploitable
 """
 
-import numpy as np
+# Standard Libraries
 import platform
 import os
 
-
-def main():
-    weights = np.random.randn()
-    biases = np.random.randn()
-    
-
-def input():
-    
+# Third Party Libraries
+import numpy as np
 
 
-def h1_arch():
-    return platform.machine()
+class SentinelCore:
+    def __init__(self):
+        self.weights = np.random.randn()
+        self.biases = np.random.randn()
+
+    def activation(self, a):
+        return self.sigmoid(np.dot(self.weights, a)+self.biases)
+    """
+    w = weight
+    b = bias
+    a = activation from previous layer
+    """
+
+    def forward(self):
+        pass
+
+    def SGD(self):
+        pass
+
+    def cost_function(self, w, b):
+        return np.sum(w, b)
+
+    def backprop(self):
+        pass
+
+    # Activation functions
+
+    def sigmoid(self, z):
+        return 1.0 / (1.0+np.exp(-z))
+
+    def ReLU(self, z):
+        pass
 
 
-def h2_os():
-    return os.name
-
-
-def output_win():
-    pass
-
-
-def output_fail():
-    pass
-
-
-# TODO: Ranomize datasets
-    
-
-# TODO: Cost funtion
-
-# TODO: Gradient Decsent
-
-
-# Activation funcitons
-def sigmoid(self, z):
-    return 1.0 / (1.0+np.exp(-z))
-
-
-main()

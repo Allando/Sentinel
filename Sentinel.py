@@ -1,32 +1,43 @@
 #!/bin/python  
 
+# Files
 import SentinelCore
 
+# Standard Libraries
+import os
+from time import sleep
 
 def main():
+    os.system("clear")
     title()
     
-    print("1) Attack Mode\n2) Training Mode\n3) Exit")
-    
+    print("1) Network mode\n2) System mode\n3) Exit")
 
     choice = int(input("What would you like to do?: "))
     
-    if choice == 1: attack_mode()
-    elif choice == 2: training_mode()
+    if choice == 1:
+        network_mode()
+    elif choice == 2:
+        system_mode()
     elif choice == 3:
         print ("Exiting...")
         exit(0)
     else:
         print("Wrong command")
+        main()
 
 
-def attack_mode():
-    print("attack module is not implementet yet")
-    main()
+def network_mode():
+    redirect()
 
 
-def training_mode():
-    print("training module is not implementet yet")
+def system_mode():
+    redirect()
+
+
+def redirect():
+    print("Module is not implemented yet\nRedirecting...")
+    sleep(1)
     main()
 
 
@@ -46,5 +57,7 @@ def title():
     for l in titleList:
         print(l)
     print("")
+
+
 main()
 
