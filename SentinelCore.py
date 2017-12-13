@@ -16,9 +16,11 @@ import numpy as np
 
 
 class SentinelCore:
-    def __init__(self):
+    def __init__(self, sizes):
         self.weights = np.random.randn()
         self.biases = np.random.randn()
+        self.nmbr_of_layers = len(sizes)
+        self.sizes = sizes
 
     def activation(self, a):
         return self.sigmoid(np.dot(self.weights, a)+self.biases)
@@ -28,8 +30,8 @@ class SentinelCore:
     a = activation from previous layer
     """
 
-    def forward(self):
-        pass
+    def feed_forward(self):
+        
 
     def SGD(self):
         pass
@@ -47,5 +49,3 @@ class SentinelCore:
 
     def ReLU(self, z):
         pass
-
-

@@ -7,6 +7,7 @@ import SentinelCore
 import os
 from time import sleep
 
+
 def main():
     os.system("clear")
     title()
