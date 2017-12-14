@@ -49,6 +49,15 @@ class SentinelCore:
         pass
         # TODO: Add the whole thing
 
+    # For local mode
+    @staticmethod
+    def program_input():
+        pass
+
+    # For network mode
+    @staticmethod
+    def ports_input():
+        pass
     # Activation functions
 
     @staticmethod
