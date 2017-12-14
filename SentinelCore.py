@@ -8,11 +8,14 @@ Output: Exploitable || Inexploitable
 """
 
 # Standard Libraries
-import platform
+import binascii
 import os
+from subprocess import Popen, PIPE
+import sys
 
 # Third Party Libraries
 import numpy as np
+import zipfile
 
 
 class SentinelCore:
@@ -25,9 +28,9 @@ class SentinelCore:
     def activation(self, a):
         return self.sigmoid(np.dot(self.weights, a)+self.biases)
     """
-    w = weight
-    b = bias
-    a = activation from previous layer
+        w = weight
+        b = bias
+        a = activation from previous layer
     """
 
     def feed_forward(self, a):
@@ -51,8 +54,10 @@ class SentinelCore:
 
     # For local mode
     @staticmethod
-    def program_input():
+    def program_input(path_to_file):
         pass
+
+
 
     # For network mode
     @staticmethod
@@ -67,3 +72,6 @@ class SentinelCore:
     def ReLU(self, z):
         pass
         # TODO: Implement ReLU
+
+
+testCore1 = SentinelCore.program_input("Data/StackBufferOverflow")
