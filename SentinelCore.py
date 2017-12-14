@@ -42,6 +42,15 @@ class SentinelCore:
     def backprop(self):
         pass
 
+    # For local mode
+    @staticmethod
+    def program_input():
+        pass
+
+    # For network mode
+    @staticmethod
+    def ports_input():
+        pass
     # Activation functions
 
     def sigmoid(self, z):
