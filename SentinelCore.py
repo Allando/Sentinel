@@ -30,22 +30,31 @@ class SentinelCore:
     a = activation from previous layer
     """
 
-    def feed_forward(self):
-        
+    def feed_forward(self, a):
+        """Return the output of the network if ``a`` is input."""
+        for b, w in zip(self.biases, self.weights):
+            a = self.sigmoid(np.dot(w, a) + b)
+        return a
 
     def SGD(self):
         pass
+        # TODO: Take input
+        # TODO: Randomize input
+        # TODO: Calculate derivative Cost / derivative weights and dCost / dBias
 
     def cost_function(self, w, b):
         return np.sum(w, b)
 
     def backprop(self):
         pass
+        # TODO: Add the whole thing
 
     # Activation functions
 
-    def sigmoid(self, z):
+    @staticmethod
+    def sigmoid(z):
         return 1.0 / (1.0+np.exp(-z))
 
     def ReLU(self, z):
         pass
+        # TODO: Implement ReLU
