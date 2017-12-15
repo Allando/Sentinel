@@ -4,7 +4,7 @@
 This is a script which uses nmap through shell command.'
 """
 
-# Standart libraries
+# Standard libraries
 import os
 
 # Third party libraries
@@ -24,11 +24,12 @@ class Nmap:
             return os.system("sudo nmap {} {}".format(self.ip_range, self.commands))
 
 
-nm0 = Nmap("127.0.0.1")
-nm1 = Nmap("127.0.0.1", "21-23", "-sn")
-nm2 = Nmap("127.0.0.1", "21-23")
-nm3 = Nmap("127.0.0.1", "21", "-sn")
-nm4 = Nmap("127.0.0.1", "21")
+hosts = "10.200.126.0/24"
+nm0 = Nmap(hosts)
+nm1 = Nmap(hosts, "21-23", "-sn")
+nm2 = Nmap(hosts, "21-23")
+nm3 = Nmap(hosts, "21", "-sn")
+nm4 = Nmap(hosts, "21")
 
 print("0: ", nm0.scan_network())
 print("1: ", nm1.scan_network())
