@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.60 scan initiated Mon Dec 18 00:53:51 2017 as: nmap -oX - -p 21-24 -Pn 192.168.0.108 -->
+<nmaprun scanner="nmap" args="nmap -oX - -p 21-24 -Pn 192.168.0.108" start="1513554831" startstr="Mon Dec 18 00:53:51 2017" version="7.60" xmloutputversion="1.04">
+<scaninfo type="connect" protocol="tcp" numservices="4" services="21-24"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1513554831" endtime="1513554833"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.0.108" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="23"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="24"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="priv-mail" method="table" conf="3"/></port>
+</ports>
+<times srtt="234" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1513554833" timestr="Mon Dec 18 00:53:53 2017" elapsed="1.24" summary="Nmap done at Mon Dec 18 00:53:53 2017; 1 IP address (1 host up) scanned in 1.24 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
