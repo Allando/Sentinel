@@ -38,16 +38,14 @@ class Nmap:
     def print_output(self):
         tree = ET.parse(self.filepath)
         root = tree.getroot()
+        print(root)
 
-        for child in root.findall('host'):
-            port = child.find('ports').text
-            port2 = child.get('ports')
-
-            print(port, port2)
+        for child in root:
+            print(child.tag, child.attrib)
 
         # ports = dom.findall('nmaprun/host/ports/port/state')
 
 
-ippo_nmap = Nmap("")
-ippo_nmap.scan()
+ippo_nmap = Nmap("192.168.6.86")
+ippo_nmap.scan(arguments="-v -A -Pn")
 ippo_nmap.print_output()
