@@ -30,10 +30,12 @@ def main():
 
 def network_mode():
     redirect()
+    # TODO: For prototype get array of open ports form victim. This will be used for exam.
 
 
 def system_mode():
     redirect()
+    
 
 
 def redirect():
