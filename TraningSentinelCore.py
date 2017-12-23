@@ -10,7 +10,7 @@ Output: Exploitable || Inexploitable
 # Standard Libraries
 import binascii
 import os
-from subprocess import Popen, PIPE
+import subprocess
 import sys
 
 # Third Party Libraries
@@ -55,7 +55,10 @@ class SentinelCore:
     # For local mode
     @staticmethod
     def program_input(path_to_file):
-        pass
+        with open("testin.dat", "w") as f:
+            command_line = "./{}".format(path_to_file)
+            subprocess.run(command_line, stdout=f, shell=True)
+
 
 
 
