@@ -37,7 +37,6 @@ def system_mode():
     redirect()
     
 
-
 def redirect():
     print("Module is not implemented yet\nRedirecting...")
     sleep(1)
