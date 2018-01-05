@@ -15,7 +15,6 @@ import sys
 
 # Third Party Libraries
 import numpy as np
-import zipfile
 
 
 class SentinelCore:
@@ -57,14 +56,12 @@ class SentinelCore:
     def program_input(path_to_file):
         pass
 
-
-
     # For network mode
     @staticmethod
     def ports_input():
         pass
-    # Activation functions
 
+    # Activation functions
     @staticmethod
     def sigmoid(z):
         return 1.0 / (1.0+np.exp(-z))

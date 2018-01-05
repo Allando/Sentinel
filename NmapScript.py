@@ -11,7 +11,6 @@ import xml.etree.ElementTree as ET
 
 # Third party libraries
 
-
 class Nmap:
     def __init__(self, ip_range):
         self.ip_range = ip_range
