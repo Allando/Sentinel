@@ -1,2 +1,5 @@
 Keywords:
     Cross entropy
+
+For range of epocs
+    run net work.

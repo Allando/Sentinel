@@ -8,73 +8,44 @@ Output: Exploitable || Inexploitable
 """
 
 # Standard Libraries
-import binascii
-import os
 import subprocess
 import sys
 
 # Third Party Libraries
 import numpy as np
-import zipfile
 
 
 class SentinelCore:
     def __init__(self, sizes):
-        self.weights = np.random.randn()
-        self.biases = np.random.randn()
-        self.nmbr_of_layers = len(sizes)
-        self.sizes = sizes
+        self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
+        self.weights = [np.random.randn(y, x) for x, y in zip(sizes[:-1], sizes[1:])]
 
-    def activation(self, a):
-        return self.sigmoid(np.dot(self.weights, a)+self.biases)
     """
-        w = weight
-        b = bias
-        a = activation from previous layer
+    This 
     """
-
     def feed_forward(self, a):
-        """Return the output of the network if ``a`` is input."""
         for b, w in zip(self.biases, self.weights):
-            a = self.sigmoid(np.dot(w, a) + b)
-        return a
+            a = self.activation(np.dot(w, a)+b)
 
-    def SGD(self, input_data, ):
+    def SGD(self, epochs, ):
         pass
-        # TODO: Take input
-        # TODO: Randomize input
-        # TODO: Calculate derivative Cost / derivative weights and dCost / dBias
-
-    def cost_function(self, w, b):
-        return np.sum(w, b)
 
     def backprop(self):
         pass
-        # TODO: Add the whole thing
 
-    # For local mode
+    """
+    Takes in z and a mode parameters
+    Where:
+        z is the activation, weights and bias.
+        mode specifies which activation function is being used.
+        
+    Return:
+        The result of which activation function is used.
+    """
     @staticmethod
-    def program_input(path_to_file):
-        with open("testin.dat", "w") as f:
-            command_line = "./{}".format(path_to_file)
-            subprocess.run(command_line, stdout=f, shell=True)
-
-
-
-
-    # For network mode
-    @staticmethod
-    def ports_input():
-        pass
-    # Activation functions
-
-    @staticmethod
-    def sigmoid(z):
-        return 1.0 / (1.0+np.exp(-z))
-
-    def ReLU(self, z):
-        pass
-        # TODO: Implement ReLU
-
-
-testCore1 = SentinelCore.program_input("Data/StackBufferOverflow")
+    def activation(z, mode=None):
+        if mode == 's' or 'S' or None:
+            return 1.0 / (1.0 + np.exp(-z))
+        elif mode == 'r' or 'R':
+            pass
+            # TODO: Return ReLU
