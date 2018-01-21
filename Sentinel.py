@@ -1,15 +1,16 @@
 #!/bin/python  
 
 # Files
-import SentinelCore
+import TraningSentinelCore
 
 # Standard Libraries
 import os
 from time import sleep
 
+CLEAR = os.system('clear')
 
 def main():
-    os.system("clear")
+    CLEAR
     title()
     
     print("1) Network mode\n2) System mode\n3) Exit")
@@ -34,7 +35,13 @@ def network_mode():
 
 
 def system_mode():
-    redirect()
+    CLEAR
+    pathToFile = input("Please specify the path to the file")
+
+    program = 1
+    sc = TraningSentinelCore.SentinelCore([1, 5, 5])
+    sc.sgd(program, 30, 10, 3.0)
+
     
 
 def redirect():
@@ -43,12 +50,13 @@ def redirect():
     main()
 
 
-"""
-This is just the title when the program is run.
-It spells out a big ol' "SENTINEL"
-"""
+
 def title():
-    titleList = [" _______  _______  __    _  _______  ___  __    _  _______  ___     ",
+    """
+    This is just the title when the program is run.
+    It spells out a big ol' "SENTINEL"
+    """
+    title_list = [" _______  _______  __    _  _______  ___  __    _  _______  ___     ",
     "|       ||       ||  |  | ||       ||   ||  |  | ||       ||   |    ",
     "|  _____||    ___||   |_| ||_     _||   ||   |_| ||    ___||   |    ",
     "| |_____ |   |___ |       |  |   |  |   ||       ||   |___ |   |    ",
@@ -56,7 +64,7 @@ def title():
     " _____| ||   |___ | | |   |  |   |  |   || | |   ||   |___ |       |",
     "|_______||_______||_|  |__|  |___|  |___||_|  |__||_______||_______|"]
 
-    for l in titleList:
+    for l in title_list:
         print(l)
     print("")
 

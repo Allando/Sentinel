@@ -1,7 +1,7 @@
 """
 This is the Convolutional Neural Network module of Sentinel
 
-Concept: #5
+
 
 Input: Open ports or Software or Kernel... which basically is software but whatever.
 Output: Exploitable || Inexploitable
