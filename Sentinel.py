@@ -1,7 +1,7 @@
 #!/bin/python  
 
 # Files
-import TraningSentinelCore
+import SentinelCoreTraining
 
 # Standard Libraries
 import os
@@ -39,7 +39,7 @@ def system_mode():
     pathToFile = input("Please specify the path to the file")
 
     program = 1
-    sc = TraningSentinelCore.SentinelCore([1, 5, 5])
+    sc = SentinelCoreTraining.SentinelCore([1, 5, 5])
     sc.sgd(program, 30, 10, 3.0)
 
     
